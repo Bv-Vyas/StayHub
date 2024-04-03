@@ -1,0 +1,21 @@
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div .emoji{
+        height: 50px;
+        width: 50px;
+        font-size: 2rem;
+    }
+</style>
+<% layout('/layouts/boilerplate') %>
+<div class="container">
+    <div class="emoji">
+        <i class="fa-regular fa-face-sad-cry emoji"></i>
+    </div>
+    <h3>OOPs !! No Result Found</h3>
+    <a href="/listings"><button class="btn btn-outline-danger">GO Back!</button></a>
+</div>

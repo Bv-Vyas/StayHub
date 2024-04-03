@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') %>
+<% for(list of searchedListings) %>
+<div class="container mt-5">
+    <div class="offset-2 card mb-3 mt-3" style="max-width: 840px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= list.image.url %>" class="img-fluid rounded-start" alt="Listing Image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body py-1 px-2">
+              <h5 class="card-title"><b><%= list.title %></b></h5>
+              <p class="card-text"><%= list.location %></p>
+              <p class="card-text"><small class="text-body-secondary"><%= list.price %> &#8377;</small></p>
+              <a href="/listings/<%= list._id  %>" class="card-link"><button class="btn btn-outline-danger" style="width: 150px; font-weight: bold;">View</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

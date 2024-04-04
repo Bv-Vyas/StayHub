@@ -1,8 +1,8 @@
 <style>
   /* Search bar */
 .search-input{
-    border-radius: 25px;
-    padding: 0.2rem 3rem 0.2rem 3rem;
+    border-radius: 8px;
+    /* padding: 0.2rem 3rem 0.2rem 3rem; */
 }
 </style>
 
@@ -15,28 +15,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse navbar" id="navbarNav">
-      <div class="navbar-nav ">
+      <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
+              <!-- search bar -->
+        <div class="searchbar ms-auto">
+          <form class="d-flex" role="search" method="get" action="/listings/searchbar">
+            <input class="form-control me-2 search-input" name="searchPlace" type="search" placeholder="Search Destination" aria-label="Search">
+            <button class="btn btn-outline-danger rounded-circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
       </div>
 
-      <!-- search bar -->
-      <div class="searchbar ms-auto">
-        <form class="d-flex" role="search" method="get" action="/listings/searchbar">
-          <input class="form-control me-2 search-input" name="searchPlace" type="search" placeholder="Search Destination" aria-label="Search">
-          <button class="btn btn-outline-danger rounded-circle" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      </div>
 
-      <div class="navbar-nav ms-auto">
+
+      <div class="navbar-nav ms-auto log-btn-div">
         <% if(!currUser) { %>
         <a class="btn btn-success mx-2 my-1" href="/signup" type="button">SignUp</a>
         <a class="btn btn-success mx-2 my-1" href="/login" type="button">LogIn</a>
         <% } %>
         <% if(currUser){ %>
+          <span class="user-img-div"><img src="https://cdn-icons-png.flaticon.com/512/219/219970.png" alt="user-img"></span>
+          <span class=" me-2 username text-danger fw-bold">@ <u><%= currUser.username %></u></span>
           <a class="btn btn-secondary logout-btn" href="/logout" type="button">LogOut</a>
-          <span class="mx-2 user-img-div"><img src="https://cdn-icons-png.flaticon.com/512/219/219970.png" alt="user-img"></span>
-          <span class="mt-2 username text-danger fw-bold">@ <u><%= currUser.username %></u></span>
         <% } %>
       </div>
     </div>

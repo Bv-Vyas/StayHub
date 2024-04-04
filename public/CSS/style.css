@@ -19,6 +19,31 @@ body{
     }
   }
 
+/* @media(max-width: 760px){
+    .mobile-nav{
+        display: block;
+    }
+} */
+
+.log-btn-div{
+    display: flex;
+    align-items: center;
+}
+
+/* user-img-div in Navbar*/
+.user-img-div{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.user-img-div img{
+    height: 40px;
+    width: 40px;
+}
+
 /* Home icon */
 .fa-compass{
     color: #fe424d;
@@ -49,8 +74,7 @@ body{
 }
 
 .f-info-socials i{
-    margin-right: 1rem;
-    margin-top: 8px;
+    padding: 5px;
     font-size: 1.5rem;
     color: #222222;
 }
@@ -125,18 +149,3 @@ body{
     margin-right: 1rem;
 }
 
-
-
-/* user-img-div in Navbar*/
-.user-img-div{
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.user-img-div img{
-    height: 40px;
-    width: 40px;
-}

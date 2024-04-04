@@ -1,7 +1,13 @@
+<style>
+  @media(min-width:760px){
+
+  }
+</style>
 <% layout('/layouts/boilerplate') %>
-<% for(list of searchedListings) %>
-<div class="container mt-5">
-    <div class="offset-2 card mb-3 mt-3" style="max-width: 840px;">
+<p class="text-secondary text-center mt-2">Showing Results For "<%= searchPlace %>"</p>
+<div class="container mt-3">
+  <% for(list of searchedListings){ %>
+    <div class="card mb-3 mt-3 ms-auto me-auto" style="max-width: 840px;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="<%= list.image.url %>" class="img-fluid rounded-start" alt="Listing Image">
@@ -16,4 +22,5 @@
           </div>
         </div>
     </div>
+  <% } %>
 </div>

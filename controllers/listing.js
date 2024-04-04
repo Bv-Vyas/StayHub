@@ -69,7 +69,7 @@ module.exports.searchedListing = async (req,res,next)=>{
     let { searchPlace } = req.query;
     let searchedListings = await Listing.find({location: `${searchPlace}`});
     if(searchedListings.length > 0){
-        res.render("./listings/searchPage.ejs", {searchedListings});
+        res.render("./listings/searchPage.ejs", {searchedListings,searchPlace});
     }else{
         let allListings = await Listing.find({});
         res.render("./listings/resultNotFoundPage.ejs", {allListings});

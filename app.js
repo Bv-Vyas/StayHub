@@ -20,6 +20,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const Listing = require('./models/listings.js');
 
 // Database url
 const Dburl = process.env.ATLASDB_URL;
@@ -88,16 +89,11 @@ app.use((req,res,next) => {
     next();
 })
 
-// Fake user for testing
-// app.get("/demouser", async (req,res)=>{
-//     let fakeuser = new User({
-//         email: "demo@gmail.com",
-//         username: "Demo-Student"
-//     });
-//     let regUser = await User.register(fakeuser, "@bv1234");
-//     res.send(regUser);
-// })
-
+// Home Path or '/'
+app.get("/", async (req,res) =>{
+    let allListings = await Listing.find();
+    res.render("listings/index.ejs", {allListings});
+})
 
 //using listing and review routes
 app.use("/listings", listingRouter);
